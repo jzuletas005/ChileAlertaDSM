@@ -1,4 +1,6 @@
 # ChileAlertaDSM
-Proyecto DSM
+DSM Project
 
-Nombre del alumno: Javier Zuleta Silva
+Name: Javier Zuleta Silva
+Name Project: ChileAlertaDSM
+Status Project: In progress..  
