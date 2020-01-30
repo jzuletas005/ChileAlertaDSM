@@ -17,9 +17,33 @@ package cl.ucn.disc.dsm.chilealerta.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import cl.ucn.disc.dsm.chilealerta.databinding.ActivityMainBinding;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+  /**
+   * The Logger
+   */
+  private static final Logger log = LoggerFactory.getLogger(MainActivity.class);
+
+  /**
+   * The bindings.
+   */
+  private ActivityMainBinding binding;
+
+  @Override
+  protected void onCreate (Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    //setContentView(R.layout.activity_main);
+
+    // Inflate the layout
+    this.binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+    // Assign to the main view.
+    setContentView(binding.getRoot());
 
 
+  }
 }

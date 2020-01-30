@@ -17,8 +17,15 @@ package cl.ucn.disc.dsm.chilealerta;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MainApplication extends AppCompatActivity {
+
+  /**
+   * The Logger.
+   */
+  private static final Logger log = LoggerFactory.getLogger(MainApplication.class);
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
