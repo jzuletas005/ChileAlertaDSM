@@ -14,13 +14,14 @@
 
     <androidx.appcompat.widget.Toolbar
       android:id="@+id/toolbar"
-      android:layout_width="345dp"
+      android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:elevation="4dp"
       android:minHeight="?attr/actionBarSize"
       android:theme="@style/Toolbar"
       app:contentInsetStart="0dp"
       app:contentInsetStartWithNavigation="0dp"
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
       app:subtitle="@string/subtitle"
       app:title="@string/title"/>
   </LinearLayout>
@@ -30,6 +31,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/rv_alertasismos"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="vertical" />
 
   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>

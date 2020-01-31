@@ -28,7 +28,7 @@ public class MockupAlertaSismo implements AlertaService {
   public  MockupAlertaSismo(){
   }
   @Override
-  public List<AlertaSismo> getAlertas(int pageSize) {
+  public List<AlertaSismo> getAlertas(AlertaSismo alertaSismos) {
     final List<AlertaSismo> alerta = new ArrayList<>();
 
     alerta.add(new AlertaSismo(
@@ -48,8 +48,4 @@ public class MockupAlertaSismo implements AlertaService {
     return alerta;
   }
 
-  @Override
-  public List<AlertaSismo> getTopHeadLines(int pageSize) {
-    return null;
-  }
 }

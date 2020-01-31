@@ -22,11 +22,11 @@ public class UltimosSismosChile {
   public String localTime;
   public String chileanTime;
   public String reference;
-  public Float magnitude;
+  public Double magnitude;
   public String scale;
-  public Float latitude;
-  public Float longitude;
-  public Integer depth;
+  public Double latitude;
+  public Double longitude;
+  public Double depth;
   public String id;
   public String url;
   public String source;

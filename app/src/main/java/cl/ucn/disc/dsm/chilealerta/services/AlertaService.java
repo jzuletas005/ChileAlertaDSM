@@ -22,14 +22,10 @@ public interface AlertaService {
 
   /**
    * Get the Alertas
-   * @param pageSize
+   * @param ultimosSismos
    * @return
    */
-  List<AlertaSismo> getAlertas(final int pageSize);
+  List<AlertaSismo> getAlertas(final AlertaSismo ultimosSismos);
 
-  /**
-   * @param pageSize
-   * @return
-   */
-  List<AlertaSismo> getTopHeadLines(final int pageSize);
+
 }

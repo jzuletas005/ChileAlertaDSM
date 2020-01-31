@@ -15,9 +15,15 @@
  */
 package cl.ucn.disc.dsm.chilealerta.services.alertapi;
 
+import cl.ucn.disc.dsm.chilealerta.model.AlertaSismo;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
 public interface AlertaApi {
 
   String BASE_URL = "https://chilealerta.com/api/query/?user=jzuletas&select=ultimos_sismos&country=chile";
 
-
+  @GET(BASE_URL)//TODO REvisar retrofit
+  Call<AlertaApiResult> getUltimosSismos(@Query("select") final AlertaSismo ultimossimos);
 }

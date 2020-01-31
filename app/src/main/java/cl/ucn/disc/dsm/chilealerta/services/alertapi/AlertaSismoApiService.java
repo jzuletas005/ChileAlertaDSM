@@ -16,6 +16,7 @@
 package cl.ucn.disc.dsm.chilealerta.services.alertapi;
 
 import cl.ucn.disc.dsm.chilealerta.model.AlertaSismo;
+import cl.ucn.disc.dsm.chilealerta.services.AlertaService;
 import cl.ucn.disc.dsm.chilealerta.services.Transformer;
 import java.io.IOException;
 import java.util.List;
@@ -33,7 +34,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class AlertaSismoApiService {
+public final class AlertaSismoApiService implements AlertaService {
 
   /**
    * Logger
@@ -99,7 +100,7 @@ public class AlertaSismoApiService {
       }
       // UltimosSismos a AlertaSismos (transformer)
       return theResult.ultimosSismosChile.stream()
-          .map(Transformer::tranform)//TODO Clase TRansformer
+          .map(Transformer::transform)
           .collect(Collectors.toList());
 
 
@@ -108,10 +109,27 @@ public class AlertaSismoApiService {
     }
   }
 
+  @Override
+  public List<AlertaSismo> getAlertas(AlertaSismo ultimosSismos) {
+
+    final Call<AlertaApiResult> theCall = this.alertaApi.getUltimosSismos(ultimosSismos);
+
+    return getAlertaSismoFromCall(theCall);
+  }
+
+
+
   public static final class AlertaApiException extends RuntimeException{
 
     public AlertaApiException (final String message){super(message);}
 
     public AlertaApiException (final String message, final Throwable cause){super(message, cause);}
   }
+
+  //public List<AlertaSismo> getAlertaSismos(int pageSize){
+
+    //final  Call<AlertaApiResult> theCall = this.alertaApi.getEverything(pageSize);
+
+    //return getAlertaSismoFromCall(theCall);
+  //}
 }
